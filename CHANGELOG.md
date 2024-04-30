@@ -12,6 +12,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`69fed7f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/69fed7f29cd522d398dbd6879893ef485992c360): Added a CHANGELOG. ([@skyzyx](https://github.com/skyzyx))
 * [`ae3a846`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ae3a846d38f7dca4a3348e16a89661a8ac6a4c73): Updated the CHANGELOG manually. ([@skyzyx](https://github.com/skyzyx))
 
+### :dependabot: Building and Dependencies
+
+* [`49cc2fc`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/49cc2fc0872c8a4957fc112a38854e082d869b5c): Remove test Dependabot config. ([@skyzyx](https://github.com/skyzyx))
+
 ### <!-- 0 -->:rocket: Features
 
 * [`dc1e457`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/dc1e457629325410c6e1fb6893e72ba5e25a549e): Initial commit. Most functionality working. ([@skyzyx](https://github.com/skyzyx))
