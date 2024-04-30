@@ -18,6 +18,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`f0c425a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f0c425a6fe34bff016408b553c70cb0355735295): Apply security best practices ([#1](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/1)) ([@step-security-bot](https://github.com/step-security-bot))
 * [`e303494`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e303494b25d952eeaabaa846c91e6478a759e575): **deps**: Bump `golangci/golangci-lint-action` from 4.0.0 to 5.1.0 ([#5](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/5)) ([@dependabot](https://github.com/dependabot))
 * [`e96c8dc`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e96c8dcae112e40bb34a9d9bb5f814f53d2ade20): **deps**: Bump `github/codeql-action` from 3.25.2 to 3.25.3 ([#4](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/4)) ([@dependabot](https://github.com/dependabot))
+* [`3aeed5e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3aeed5e2857eeff6b825549ed91488894b6d2d8e): **deps**: Bump `step-security/harden-runner` from 2.7.0 to 2.7.1 ([#3](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/3)) ([@dependabot](https://github.com/dependabot))
+* [`9657649`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9657649176c885ef27864f244e011d8909ac8e90): **deps**: Bump `actions/dependency-review-action` from 4.2.5 to 4.3.2 ([#2](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/2)) ([@dependabot](https://github.com/dependabot))
 
 ### <!-- 0 -->:rocket: Features
 
