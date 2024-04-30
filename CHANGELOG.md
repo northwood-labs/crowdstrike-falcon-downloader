@@ -15,6 +15,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 ### :dependabot: Building and Dependencies
 
 * [`49cc2fc`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/49cc2fc0872c8a4957fc112a38854e082d869b5c): Remove test Dependabot config. ([@skyzyx](https://github.com/skyzyx))
+* [`f0c425a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f0c425a6fe34bff016408b553c70cb0355735295): Apply security best practices ([#1](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/1)) ([@step-security-bot](https://github.com/step-security-bot))
 
 ### <!-- 0 -->:rocket: Features
 
