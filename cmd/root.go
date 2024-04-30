@@ -37,8 +37,11 @@ import (
 const height = 20
 
 var (
-	fVerbose  bool
+	fDownload bool
+	fLatest   bool
 	fJson     bool
+	fVerbose  bool
+
 	fAmzn1    bool
 	fAmzn2    bool
 	fAmzn2023 bool
@@ -56,6 +59,9 @@ var (
 	fArm64    bool
 	fIntel64  bool
 	fS390x    bool
+
+	hasOSFlag  bool
+	hasCPUFlag bool
 
 	apiToken  string
 	sensor    crowdstrike.ListResources
@@ -112,6 +118,15 @@ var (
 				logger.SetLevel(log.DebugLevel)
 			}
 
+			if fAmzn1 || fAmzn2 || fAmzn2023 || fEL6 || fEL7 || fEL8 || fEL9 || fMac || fSuse11 || fSuse12 ||
+				fSuse15 || fDebian || fUbuntu || fWindows {
+				hasOSFlag = true
+			}
+
+			if fArm64 || fIntel64 || fS390x {
+				hasCPUFlag = true
+			}
+
 			err := spinner.New().
 				Title("Fetching OAuth Bearer Token...").
 				Type(spinner.Dots).
@@ -152,7 +167,20 @@ var (
 							)
 						})
 
-						*sensors = filteredData
+						if fLatest && hasOSFlag && hasCPUFlag && len(filteredData) > 0 {
+							*sensors = []crowdstrike.ListResources{
+								filteredData[0],
+							}
+						} else if fLatest {
+							logger.Fatal(
+								"The --latest flag requires both an OS flag AND a CPU flag.",
+								"hasOSFlag", hasOSFlag,
+								"hasCPUFlag", hasCPUFlag,
+								"results", len(filteredData),
+							)
+						} else {
+							*sensors = filteredData
+						}
 					}
 				}(&sensors)).
 				Run()
@@ -161,6 +189,22 @@ var (
 			}
 
 			logger.Debug("Successfully fetched the list of Falcon sensors...")
+
+			if fDownload && len(sensors) == 1 {
+				if sensors[0] != (crowdstrike.ListResources{}) {
+					err = crowdstrike.DownloadInstaller(
+						apiToken,
+						sensors[0].Sha256,
+						sensors[0].Name,
+						sensors[0].FileSize,
+					)
+					if err != nil {
+						logger.Fatal(err)
+					}
+				}
+
+				os.Exit(0)
+			}
 
 			if fJson {
 				jsonb, err := json.Marshal(sensors)
@@ -238,8 +282,12 @@ var (
 )
 
 func init() {
-	rootCmd.PersistentFlags().BoolVarP(&fVerbose, "verbose", "v", false, "Enable verbose output.")
+	rootCmd.PersistentFlags().
+		BoolVarP(&fDownload, "download", "d", false, "Download the sensor when there is a single match.")
+	rootCmd.PersistentFlags().
+		BoolVarP(&fLatest, "latest", "l", false, "Determine the latest release for an OS + CPU combination.")
 	rootCmd.PersistentFlags().BoolVarP(&fJson, "json", "j", false, "Enable JSON output.")
+	rootCmd.PersistentFlags().BoolVarP(&fVerbose, "verbose", "v", false, "Enable verbose output.")
 
 	rootCmd.Flags().BoolVarP(&fAmzn1, "amzn1", "", false, "Filter to include Amazon Linux 1 installers.")
 	rootCmd.Flags().BoolVarP(&fAmzn2, "amzn2", "", false, "Filter to include Amazon Linux 2 installers.")
