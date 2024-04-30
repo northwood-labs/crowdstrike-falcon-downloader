@@ -32,6 +32,7 @@ jobs:
           allowed-endpoints: >
             api.github.com:443
             api.gumroad.com:443
+            github-cloud.githubusercontent.com:443
             github.com:443
             goreleaser.com:443
             objects.githubusercontent.com:443
@@ -65,9 +66,17 @@ jobs:
       - name: GoReleaser Action
         uses: goreleaser/goreleaser-action@7ec5c2b0c6cdda6e8bbb49444bc797dd33d74dd8 # v5.0.0
         env:
+          GH_PUBLIC_TOKEN: ${{ secrets.GH_PUBLIC_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GORELEASER_KEY: ${{ secrets.GORELEASER_KEY }}
           GPG_FINGERPRINT: ${{ steps.import_gpg.outputs.fingerprint }}
+          MACOS_NOTARY_ISSUER_ID: ${{ secrets.MACOS_NOTARY_ISSUER_ID }}
+          MACOS_NOTARY_KEY_ID: ${{ secrets.MACOS_NOTARY_KEY_ID }}
+          MACOS_NOTARY_KEY: ${{ secrets.MACOS_NOTARY_KEY }}
+          MACOS_SIGN_P12: ${{ secrets.MACOS_SIGN_P12 }}
+          MACOS_SIGN_PASSWORD: ${{ secrets.MACOS_SIGN_PASSWORD }}
+          NFPM_PASSPHRASE: "${{ secrets.GPG_PWD }}"
+          RSA_KEY_B64: ${{ secrets.RSA_KEY_B64 }}
         with:
           distribution: goreleaser-pro
           version: latest

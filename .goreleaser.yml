@@ -1,50 +1,74 @@
 ---
-project_name: terraform-provider-corefunc
+project_name: crowdstrike-falcon-downloader
 dist: ./dist
+
+# https://goreleaser.com/customization/templates/#custom-variables
+variables:
+  MaintainerName: Northwood Labs
+  MaintainerEmail: bot@northwood-labs.com
+  Description: |-
+    CLI/TUI for downloading sensors for CrowdStrike Falcon.
 
 # https://goreleaser.com/customization/reportsizes/
 report_sizes: true
 
 # https://goreleaser.com/customization/builds/
 builds:
-  - env:
-      - CGO_ENABLED=0
+  - id: linux
+    binary: '{{ .ProjectName }}'
+    skip: false
     mod_timestamp: '{{ .CommitTimestamp }}'
+    env:
+      - CGO_ENABLED=0
     flags:
       - -trimpath
     ldflags:
-      - -s -w -X github.com/northwood-labs/crowdstrike-falcon-downloader/cmd.Version={{.Version}}
+      - -s -w -X github.com/northwood-labs/{{ .ProjectName }}/cmd.Version={{ .Version }}
     goos:
-      - darwin
-      - freebsd
       - linux
-      - netbsd
-      - openbsd
+    goarch:
+      - amd64
+      - arm64
+
+  - id: windows
+    binary: '{{ .ProjectName }}'
+    skip: false
+    mod_timestamp: '{{ .CommitTimestamp }}'
+    env:
+      - CGO_ENABLED=0
+    flags:
+      - -trimpath
+    ldflags:
+      - -s -w -X github.com/northwood-labs/{{ .ProjectName }}/cmd.Version={{ .Version }}
+    goos:
       - windows
     goarch:
-      - '386'
       - amd64
-      - arm
       - arm64
-    ignore:
-      - goos: darwin
-        goarch: '386'
-      - goos: darwin
-        goarch: arm
-      - goos: openbsd
-        goarch: arm
-      - goos: openbsd
-        goarch: arm64
-      - goos: netbsd
-        goarch: arm
-      - goos: netbsd
-        goarch: arm64
-    binary: '{{ .ProjectName }}_v{{ .Version }}'
 
-# https://goreleaser.com/customization/archive/
-archives:
-  - format: zip
-    name_template: '{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}'
+  - id: macos
+    binary: '{{ .ProjectName }}'
+    skip: false
+    mod_timestamp: '{{ .CommitTimestamp }}'
+    env:
+      - CGO_ENABLED=0
+    flags:
+      - -trimpath
+    ldflags:
+      - -s -w -X github.com/northwood-labs/{{ .ProjectName }}/cmd.Version={{ .Version }}
+    goos:
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+
+# https://goreleaser.com/customization/universalbinaries/
+universal_binaries:
+  - id: macos-universal
+    ids:
+      - macos
+    name_template: '{{ .ProjectName }}'
+    replace: true
 
 # https://goreleaser.com/customization/checksum/
 checksum:
@@ -53,7 +77,16 @@ checksum:
 
 # https://goreleaser.com/customization/sign/
 signs:
-  - artifacts: checksum
+  - id: gpg
+    ids:
+      - apk
+      - deb
+      - linux-archive
+      - macos-archive
+      - rpm
+      - windows-archive
+    signature: '${artifact}.sig'
+    artifacts: all
     args:
       - --batch
       - --local-user
@@ -65,16 +98,159 @@ signs:
 
 # https://goreleaser.com/customization/release/
 release:
-  # Visit your project's GitHub Releases page to publish this release.
+  github:
+    owner: northwood-labs
+    name: '{{ .ProjectName }}'
   draft: true
+  replace_existing_draft: true
+  replace_existing_artifacts: true
   prerelease: auto
+  make_latest: true
   mode: replace
-  # extra_files:
-  #   - glob: terraform-registry-manifest.json
-  #     name_template: "{{ .ProjectName }}_{{ .Version }}_manifest.json"
-  name_template: '{{.Version}} — {{time "2006-01-02"}}'
+  name_template: '{{ .Version }} — {{ time "2006-01-02" }}'
 
 # https://goreleaser.com/customization/changelog/
 changelog:
-  skip: false
+  disable: false
   use: github-native
+
+# https://goreleaser.com/customization/archive/
+archives:
+  - id: 'linux-archive'
+    builds:
+      - linux
+    allow_different_binary_count: false
+    wrap_in_directory: false
+    format: zip
+    files:
+      - none*
+    name_template:
+      '{{ .ProjectName }}-{{ .Version }}-{{ .Os }}-{{ .Arch }}{{ with .Arm }}32v{{ . }}{{ end }}{{ if not (eq .Amd64
+      "v1") }}{{ .Amd64 }}{{ end }}'
+
+  - id: 'windows-archive'
+    builds:
+      - windows
+    allow_different_binary_count: false
+    wrap_in_directory: false
+    format: zip
+    files:
+      - none*
+    name_template:
+      '{{ .ProjectName }}-{{ .Version }}-{{ .Os }}-{{ .Arch }}{{ with .Arm }}32v{{ . }}{{ end }}{{ if not (eq .Amd64
+      "v1") }}{{ .Amd64 }}{{ end }}'
+
+  - id: 'macos-archive'
+    builds:
+      - macos-universal
+    allow_different_binary_count: false
+    wrap_in_directory: false
+    format: zip
+    files:
+      - none*
+    name_template: '{{ .ProjectName }}-{{ .Version }}-{{ .Os }}-universal'
+
+# https://goreleaser.com/customization/nfpm/
+nfpms:
+  - id: rpm
+    builds:
+      - linux
+    package_name: '{{ .ProjectName }}'
+    vendor: '{{ .Var.MaintainerName }}'
+    homepage: 'https://github.com/northwood-labs/{{ .ProjectName }}'
+    description: '{{.Var.Description}}'
+    maintainer: '{{ .Var.MaintainerName }} <{{ .Var.MaintainerEmail }}>'
+    file_name_template: '{{ .ConventionalFileName }}'
+    umask: 0o002
+    formats:
+      - rpm
+    bindir: /usr/local/bin
+    epoch: '1'
+    release: '1'
+    rpm:
+      compression: lzma
+
+  - id: deb
+    builds:
+      - linux
+    package_name: '{{ .ProjectName }}'
+    vendor: '{{ .Var.MaintainerName }}'
+    homepage: 'https://github.com/northwood-labs/{{ .ProjectName }}'
+    description: '{{.Var.Description}}'
+    maintainer: '{{ .Var.MaintainerName }} <{{ .Var.MaintainerEmail }}>'
+    file_name_template: '{{ .ConventionalFileName }}'
+    umask: 0o002
+    formats:
+      - deb
+    bindir: /usr/local/bin
+    epoch: '1'
+    release: '1'
+
+  - id: apk
+    builds:
+      - linux
+    package_name: '{{ .ProjectName }}'
+    vendor: '{{ .Var.MaintainerName }}'
+    homepage: 'https://github.com/northwood-labs/{{ .ProjectName }}'
+    description: '{{.Var.Description}}'
+    maintainer: '{{ .Var.MaintainerName }} <{{ .Var.MaintainerEmail }}>'
+    file_name_template: '{{ .ConventionalFileName }}'
+    umask: 0o002
+    formats:
+      - apk
+    bindir: /usr/local/bin
+    epoch: '1'
+    release: '1'
+
+# https://goreleaser.com/customization/notarize/
+# notarize:
+#   macos:
+#     - enabled: '{{ isEnvSet "MACOS_SIGN_P12 }}'
+#       ids:
+#         - macos-archive
+#       sign:
+#         certificate: '{{ .Env.MACOS_SIGN_P12 }}'
+#         password: '{{ .Env.MACOS_SIGN_PASSWORD }}'
+#       notarize:
+#         issuer_id: '{{ .Env.MACOS_NOTARY_ISSUER_ID }}'
+#         key_id: '{{ .Env.MACOS_NOTARY_KEY_ID }}'
+#         key: '{{ .Env.MACOS_NOTARY_KEY }}'
+#         wait: true
+#         timeout: 30m
+
+# https://goreleaser.com/customization/homebrew/
+brews:
+  - name: '{{ .ProjectName }}'
+    # alternative_names:
+    #   - myproject@{{ .Version }}
+    #   - myproject@{{ .Major }}
+    ids:
+      - macos-archive
+      - linux-archive
+    url_template:
+      'https://github.com/northwood-labs/{{ .ProjectName }}/releases/download/{{ .Tag }}/{{ .ArtifactName }}'
+    url_headers:
+      - 'Accept: application/octet-stream'
+      - 'Authorization: Bearer #{ENV["HOMEBREW_GITHUB_API_TOKEN"]}'
+    download_strategy: CurlDownloadStrategy
+    commit_author:
+      name: '{{ .Var.MaintainerName }}'
+      email: '{{ .Var.MaintainerEmail }}'
+    commit_msg_template: 'automation: Brew formula update for {{ .ProjectName }} version {{ .Tag }}.'
+    directory: Formula
+    caveats: 'This is a macOS Universal Binary that should work on Intel and Apple Silicon chips.'
+    homepage: 'https://github.com/northwood-labs/{{ .ProjectName }}'
+    description: '{{ .Var.Description }}'
+    license: Apache-2.0
+    skip_upload: false
+    test: |
+      system "#{bin}/{{ .ProjectName }} version"
+    repository:
+      owner: northwood-labs
+      name: '{{ .ProjectName }}'
+      branch: main
+      token: '{{ .Env.GH_PUBLIC_TOKEN }}'
+      # token_type: 'github'
+    # git:
+    #   url: 'git@github.com:northwood-labs/{{ .ProjectName }}.git'
+    #   private_key: '{{ .Env.PRIVATE_KEY_PATH }}'
