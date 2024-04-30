@@ -17,6 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`49cc2fc`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/49cc2fc0872c8a4957fc112a38854e082d869b5c): Remove test Dependabot config. ([@skyzyx](https://github.com/skyzyx))
 * [`f0c425a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f0c425a6fe34bff016408b553c70cb0355735295): Apply security best practices ([#1](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/1)) ([@step-security-bot](https://github.com/step-security-bot))
 * [`e303494`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e303494b25d952eeaabaa846c91e6478a759e575): **deps**: Bump `golangci/golangci-lint-action` from 4.0.0 to 5.1.0 ([#5](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/5)) ([@dependabot](https://github.com/dependabot))
+* [`e96c8dc`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e96c8dcae112e40bb34a9d9bb5f814f53d2ade20): **deps**: Bump `github/codeql-action` from 3.25.2 to 3.25.3 ([#4](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/4)) ([@dependabot](https://github.com/dependabot))
 
 ### <!-- 0 -->:rocket: Features
 
