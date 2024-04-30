@@ -127,14 +127,12 @@ func DownloadInstaller(token, sha256, filename string, contentLength int64) erro
 
 	defer f.Close()
 
-	bar := progressbar.DefaultBytes(contentLength, "Downloading")
+	bar := progressbar.DefaultBytes(contentLength, filename)
 
 	_, err = io.Copy(io.MultiWriter(f, bar), response.Body)
 	if err != nil {
 		return fmt.Errorf("could not perform download into file: %w", err)
 	}
-
-	fmt.Print("\n")
 
 	return nil
 }
