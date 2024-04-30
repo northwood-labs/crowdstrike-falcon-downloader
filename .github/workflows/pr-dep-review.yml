@@ -1,0 +1,41 @@
+---
+name: PR Dependency Review
+on: [pull_request]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  dependency-review:
+    runs-on: ubuntu-latest
+    name: Scan for issues
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        with:
+          disable-sudo: true
+          egress-policy: block
+          allowed-endpoints: >
+            api.github.com:443
+            github.com:443
+            objects.githubusercontent.com:443
+            proxy.golang.org:443
+            sum.golang.org:443
+
+      - name: Checkout Repository
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
+
+      - name: Dependency Review
+        uses: actions/dependency-review-action@5bbc3ba658137598168acb2ab73b21c432dd411b # v4.2.5
+        with:
+          fail-on-severity: low
+          license-check: true
+          vulnerability-check: true
+          comment-summary-in-pr: on-failure
+          allow-licenses: Apache-2.0, BSD-2-Clause, BSD-3-Clause, ISC, MPL-2.0, MIT

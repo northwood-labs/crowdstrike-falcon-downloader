@@ -1,0 +1,74 @@
+---
+# This workflow uses actions that are not certified by GitHub. They are provided
+# by a third-party and are governed by separate terms of service, privacy
+# policy, and support documentation.
+
+name: Auto-update on push
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+# Declare default permissions as read only.
+permissions: read-all
+
+jobs:
+  update_on_push_job:
+    runs-on: ubuntu-latest
+    name: Auto-update on push
+    permissions:
+      contents: write
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        with:
+          disable-sudo: true
+          egress-policy: block
+          allowed-endpoints: >
+            api.github.com:443
+            github.com:443
+            objects.githubusercontent.com:443
+            registry.npmjs.org:443
+
+      - name: Install Node.js
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+        with:
+          node-version: "20"
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Checkout Source
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
+        with:
+          fetch-depth: 0
+
+      - name: Generate Changelog
+        uses: orhun/git-cliff-action@8b17108aad4d9362649a5dae020746c2a767c90d # v3.0.2
+        with:
+          config: cliff.toml
+          args: --verbose
+        env:
+          OUTPUT: CHANGELOG.md
+
+      - name: Generate artifacts
+        run: |
+          # Generate list of authors
+          ./scripts/generate-contributors.sh
+
+      - name: Git commit if changed
+        run: |
+          git config user.name "Northwood Labs (Bot)"
+          git config user.email "bot@northwood-labs.com"
+
+          set +e
+
+          git add .
+          git status | grep modified
+          if [ $? -eq 0 ]; then
+            git commit -a -m "automation: Updated AUTHORS and CHANGELOG on $(date)."
+            git push https://${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git main
+          fi

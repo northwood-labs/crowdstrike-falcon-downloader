@@ -1,0 +1,80 @@
+---
+project_name: terraform-provider-corefunc
+dist: ./dist
+
+# https://goreleaser.com/customization/reportsizes/
+report_sizes: true
+
+# https://goreleaser.com/customization/builds/
+builds:
+  - env:
+      - CGO_ENABLED=0
+    mod_timestamp: '{{ .CommitTimestamp }}'
+    flags:
+      - -trimpath
+    ldflags:
+      - -s -w -X github.com/northwood-labs/crowdstrike-falcon-downloader/cmd.Version={{.Version}}
+    goos:
+      - darwin
+      - freebsd
+      - linux
+      - netbsd
+      - openbsd
+      - windows
+    goarch:
+      - '386'
+      - amd64
+      - arm
+      - arm64
+    ignore:
+      - goos: darwin
+        goarch: '386'
+      - goos: darwin
+        goarch: arm
+      - goos: openbsd
+        goarch: arm
+      - goos: openbsd
+        goarch: arm64
+      - goos: netbsd
+        goarch: arm
+      - goos: netbsd
+        goarch: arm64
+    binary: '{{ .ProjectName }}_v{{ .Version }}'
+
+# https://goreleaser.com/customization/archive/
+archives:
+  - format: zip
+    name_template: '{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}'
+
+# https://goreleaser.com/customization/checksum/
+checksum:
+  name_template: '{{ .ProjectName }}_{{ .Version }}_SHA256SUMS'
+  algorithm: sha256
+
+# https://goreleaser.com/customization/sign/
+signs:
+  - artifacts: checksum
+    args:
+      - --batch
+      - --local-user
+      - '{{ .Env.GPG_FINGERPRINT }}' # set this environment variable for your signing key
+      - --output
+      - ${signature}
+      - --detach-sign
+      - ${artifact}
+
+# https://goreleaser.com/customization/release/
+release:
+  # Visit your project's GitHub Releases page to publish this release.
+  draft: true
+  prerelease: auto
+  mode: replace
+  # extra_files:
+  #   - glob: terraform-registry-manifest.json
+  #     name_template: "{{ .ProjectName }}_{{ .Version }}_manifest.json"
+  name_template: '{{.Version}} — {{time "2006-01-02"}}'
+
+# https://goreleaser.com/customization/changelog/
+changelog:
+  skip: false
+  use: github-native

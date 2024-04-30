@@ -1,0 +1,74 @@
+---
+# This workflow uses actions that are not certified by GitHub. They are provided
+# by a third-party and are governed by separate terms of service, privacy
+# policy, and support documentation.
+
+name: Release
+on:
+  push:
+    tags:
+      - "*"
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release version"
+        required: false
+        type: string
+
+permissions: read-all
+
+jobs:
+  release_job:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    name: GoReleaser
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        with:
+          disable-sudo: true
+          egress-policy: block
+          allowed-endpoints: >
+            api.github.com:443
+            api.gumroad.com:443
+            github.com:443
+            goreleaser.com:443
+            objects.githubusercontent.com:443
+            proxy.golang.org:443
+            sum.golang.org:443
+            uploads.github.com:443
+
+      - name: Checkout Source
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
+        with:
+          fetch-depth: 0
+
+      - name: Install Go
+        uses: actions/setup-go@0c52d547c9bc32b1aa3301fd7a9cb496313a4491 # v5.0.0
+        with:
+          go-version: ">= 1.22.1"
+          cache: true
+
+      - name: Import GPG Signing Key
+        uses: crazy-max/ghaction-import-gpg@01dd5d3ca463c7f10f7f4f7b4f177225ac661ee4 # v6.1.0
+        id: import_gpg
+        with:
+          gpg_private_key: ${{ secrets.GPG_KEY_B64 }}
+          passphrase: ${{ secrets.GPG_PWD }}
+
+      - name: Checkout tag
+        if: ${{ github.event.inputs.version != '' }}
+        run: |
+          git checkout refs/tags/${{ github.event.inputs.version }}
+
+      - name: GoReleaser Action
+        uses: goreleaser/goreleaser-action@7ec5c2b0c6cdda6e8bbb49444bc797dd33d74dd8 # v5.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GORELEASER_KEY: ${{ secrets.GORELEASER_KEY }}
+          GPG_FINGERPRINT: ${{ steps.import_gpg.outputs.fingerprint }}
+        with:
+          distribution: goreleaser-pro
+          version: latest
+          args: release --clean
