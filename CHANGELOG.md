@@ -3,21 +3,24 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com), adheres to [Semantic Versioning](https://semver.org), and uses [Conventional Commit](https://www.conventionalcommits.org) syntax.
-
+  
 ## Unreleased
 
 ### :books: Documentation
 
-* [`0430f46`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/0430f4648c12420c74234149e9abb48d3c918b2b): Added a `README.md`. ()
+* [`c05ec78`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c05ec78c8521cd9aa25fe1c38e393120f375c4e7): Added a `README.md`. ([@skyzyx](https://github.com/skyzyx))
+* [`69fed7f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/69fed7f29cd522d398dbd6879893ef485992c360): Added a CHANGELOG. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- 0 -->:rocket: Features
 
-* [`9abec6a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9abec6a532c2dc645641e2bdddaee4ae206228a1): Implement support for JSON output. ([@skyzyx](https://github.com/skyzyx))
-* [`7691766`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/7691766a93409f5a91138c87012d2b08ce1a2707): Added support for filtering to latest release and download. ([@skyzyx](https://github.com/skyzyx))
+* [`dc1e457`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/dc1e457629325410c6e1fb6893e72ba5e25a549e): Initial commit. Most functionality working. ([@skyzyx](https://github.com/skyzyx))
+* [`ea1b892`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ea1b892a437ea7fe77ef031c6d5a0eb4b43424fe): Implement support for JSON output. ([@skyzyx](https://github.com/skyzyx))
+* [`6c90906`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6c90906e7482a7d7b67f0c06c7202d3d05b2167b): Added support for filtering to latest release and download. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- 1 -->:bug: Bug Fixes
 
-* [`d3edacb`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d3edacb5baad8b29194b0d646f630123121cd297): Adjust the progress bar. ([@skyzyx](https://github.com/skyzyx))
-* [`4c66185`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/4c66185e3dce0500444e924021b969bfcac71dd1): Escaped quotes in license headers. ([@skyzyx](https://github.com/skyzyx))
+* [`b8b7270`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b8b72705f79cd66afb783729a8c2017fbb8bf363): Adjust the progress bar. ([@skyzyx](https://github.com/skyzyx))
+* [`a22212c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a22212ccff31f1ebcb66f2edc39bb3583defdc57): Escaped quotes in license headers. ([@skyzyx](https://github.com/skyzyx))
 
 <p>Generated on 2024-04-30.</p>
+
