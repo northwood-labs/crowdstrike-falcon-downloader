@@ -16,6 +16,7 @@ package cmd
 
 import (
 	"cmp"
+	"encoding/json"
 	"fmt"
 	"os"
 	"slices"
@@ -37,6 +38,7 @@ const height = 20
 
 var (
 	fVerbose  bool
+	fJson     bool
 	fAmzn1    bool
 	fAmzn2    bool
 	fAmzn2023 bool
@@ -160,66 +162,75 @@ var (
 
 			logger.Debug("Successfully fetched the list of Falcon sensors...")
 
-			columns := []table.Column{
-				{Title: "Name", Width: 50},     // lint:allow_raw_number
-				{Title: "Version", Width: 10},  // lint:allow_raw_number
-				{Title: "OS", Width: 30},       // lint:allow_raw_number
-				{Title: "SHA256", Width: 15},   // lint:allow_raw_number
-				{Title: "Size", Width: 7},      // lint:allow_raw_number
-				{Title: "Released", Width: 15}, // lint:allow_raw_number
-			}
-
-			rows := []table.Row{}
-
-			for i := range sensors {
-				rows = append(
-					rows,
-					table.Row{
-						sensors[i].Name,
-						sensors[i].Version,
-						sensors[i].OS + " " + sensors[i].OSVersion,
-						sensors[i].Sha256,
-						humanize.Bytes(uint64(sensors[i].FileSize)),
-						humanize.Time(sensors[i].ReleaseDate),
-					},
-				)
-
-				sensorMap[sensors[i].Sha256] = sensors[i]
-			}
-
-			t := table.New(
-				table.WithColumns(columns),
-				table.WithRows(rows),
-				table.WithFocused(true),
-				table.WithHeight(height),
-			)
-
-			s := table.DefaultStyles()
-			s.Header = s.Header.
-				BorderStyle(lipgloss.NormalBorder()).
-				BorderForeground(lipgloss.Color("240")).
-				BorderBottom(true).
-				Bold(false)
-			s.Selected = s.Selected.
-				Foreground(lipgloss.Color("229")).
-				Background(lipgloss.Color("57")).
-				Bold(false)
-			t.SetStyles(s)
-
-			m := model{
-				table: t,
-				keys:  keys,
-				help:  help.New(),
-			}
-			if _, err := tea.NewProgram(m).Run(); err != nil {
-				fmt.Println("Error running program:", err)
-				os.Exit(1)
-			}
-
-			if sensor != (crowdstrike.ListResources{}) {
-				err = crowdstrike.DownloadInstaller(apiToken, sensor.Sha256, sensor.Name, sensor.FileSize)
+			if fJson {
+				jsonb, err := json.Marshal(sensors)
 				if err != nil {
 					logger.Fatal(err)
+				}
+
+				fmt.Println(string(jsonb))
+			} else {
+				columns := []table.Column{
+					{Title: "Name", Width: 50},     // lint:allow_raw_number
+					{Title: "Version", Width: 10},  // lint:allow_raw_number
+					{Title: "OS", Width: 30},       // lint:allow_raw_number
+					{Title: "SHA256", Width: 15},   // lint:allow_raw_number
+					{Title: "Size", Width: 7},      // lint:allow_raw_number
+					{Title: "Released", Width: 15}, // lint:allow_raw_number
+				}
+
+				rows := []table.Row{}
+
+				for i := range sensors {
+					rows = append(
+						rows,
+						table.Row{
+							sensors[i].Name,
+							sensors[i].Version,
+							sensors[i].OS + " " + sensors[i].OSVersion,
+							sensors[i].Sha256,
+							humanize.Bytes(uint64(sensors[i].FileSize)),
+							humanize.Time(sensors[i].ReleaseDate),
+						},
+					)
+
+					sensorMap[sensors[i].Sha256] = sensors[i]
+				}
+
+				t := table.New(
+					table.WithColumns(columns),
+					table.WithRows(rows),
+					table.WithFocused(true),
+					table.WithHeight(height),
+				)
+
+				s := table.DefaultStyles()
+				s.Header = s.Header.
+					BorderStyle(lipgloss.NormalBorder()).
+					BorderForeground(lipgloss.Color("240")).
+					BorderBottom(true).
+					Bold(false)
+				s.Selected = s.Selected.
+					Foreground(lipgloss.Color("229")).
+					Background(lipgloss.Color("57")).
+					Bold(false)
+				t.SetStyles(s)
+
+				m := model{
+					table: t,
+					keys:  keys,
+					help:  help.New(),
+				}
+				if _, err := tea.NewProgram(m).Run(); err != nil {
+					fmt.Println("Error running program:", err)
+					os.Exit(1)
+				}
+
+				if sensor != (crowdstrike.ListResources{}) {
+					err = crowdstrike.DownloadInstaller(apiToken, sensor.Sha256, sensor.Name, sensor.FileSize)
+					if err != nil {
+						logger.Fatal(err)
+					}
 				}
 			}
 		},
@@ -228,6 +239,7 @@ var (
 
 func init() {
 	rootCmd.PersistentFlags().BoolVarP(&fVerbose, "verbose", "v", false, "Enable verbose output.")
+	rootCmd.PersistentFlags().BoolVarP(&fJson, "json", "j", false, "Enable JSON output.")
 
 	rootCmd.Flags().BoolVarP(&fAmzn1, "amzn1", "", false, "Filter to include Amazon Linux 1 installers.")
 	rootCmd.Flags().BoolVarP(&fAmzn2, "amzn2", "", false, "Filter to include Amazon Linux 2 installers.")

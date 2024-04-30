@@ -14,9 +14,7 @@
 
 package crowdstrike
 
-import (
-	"time"
-)
+import "time"
 
 type (
 	OAuthResp struct {
