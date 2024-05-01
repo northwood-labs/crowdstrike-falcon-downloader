@@ -35,16 +35,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 
 ### <!-- ZZZ -->:gear: Miscellaneous Tasks
 
-* [`d0ea8c7`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d0ea8c7d131fc67fc9c35e0427221bf4a49919ea): Testing GoReleaser configuration. ([@skyzyx](https://github.com/skyzyx))
-* [`a518dc0`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a518dc08416056ffcebe6ef94eaa58883996e5ad): Testing GoReleaser configuration. ([@skyzyx](https://github.com/skyzyx))
-* [`d0942cd`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d0942cd3f88943fb56781fa0686a26148d40ba77): Testing GoReleaser configuration. ([@skyzyx](https://github.com/skyzyx))
-* [`198640b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/198640b7899ce038a52566f4ce64b48460b2ffe5): Testing GoReleaser configuration. ([@skyzyx](https://github.com/skyzyx))
-* [`a3dcf07`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a3dcf078a03f05cbb8f72bb09b40fc8833d0079d): Testing GoReleaser configuration. ([@skyzyx](https://github.com/skyzyx))
-* [`bc7d65c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/bc7d65cf3393264d29a992efcc8cd47402fe0d88): Testing GoReleaser configuration. ([@skyzyx](https://github.com/skyzyx))
-* [`f5709be`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f5709be2fd1e720e0b13c34282ab0849562128be): Testing GoReleaser configuration. ([@skyzyx](https://github.com/skyzyx))
-* [`871e6dd`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/871e6dd69b27f094192a3aa1e4461f70422a0490): Testing GoReleaser configuration. ([@skyzyx](https://github.com/skyzyx))
-* [`c47a43a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c47a43ad9ba8f4ad395e8b50ab87e9434109ca16): Testing GoReleaser configuration. ([@skyzyx](https://github.com/skyzyx))
-* [`694c405`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/694c405c0ffc2acff34e37f167a303d09ce3b0ad): Testing GoReleaser configuration. ([@skyzyx](https://github.com/skyzyx))
+* [`15ce03b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/15ce03bdbebfe0f3d94841cc3854a2b3f116eb68): Testing GoReleaser configuration. ([@skyzyx](https://github.com/skyzyx))
 
 <p>Generated on 2024-05-01.</p>
 
