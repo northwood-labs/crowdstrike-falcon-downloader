@@ -5,16 +5,16 @@
 class CrowdstrikeFalconDownloader < Formula
   desc "CLI/TUI for downloading sensors for CrowdStrike Falcon."
   homepage "https://github.com/northwood-labs/crowdstrike-falcon-downloader"
-  version "1.0.0-rc9"
+  version "1.0.0"
   license "Apache-2.0"
 
   on_macos do
-    url "https://github.com/northwood-labs/crowdstrike-falcon-downloader/releases/download/1.0.0-rc9/crowdstrike-falcon-downloader-1.0.0-rc9-darwin-universal.zip", using: CurlDownloadStrategy,
+    url "https://github.com/northwood-labs/crowdstrike-falcon-downloader/releases/download/1.0.0/crowdstrike-falcon-downloader-1.0.0-darwin-universal.zip", using: CurlDownloadStrategy,
       headers: [
           "Accept: application/octet-stream",
           "Authorization: Bearer #{ENV["HOMEBREW_GITHUB_API_TOKEN"]}"
       ]
-    sha256 "d22d3693cb598a1705b1269a5665dda7a513252f9752e885c067edbf3bce4a62"
+    sha256 "7baca4b48c836340713d5fa78955e247e9c5caa36a5fb06269e57f6eee15d16b"
 
     def install
       bin.install "crowdstrike-falcon-downloader"
@@ -23,24 +23,24 @@ class CrowdstrikeFalconDownloader < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/northwood-labs/crowdstrike-falcon-downloader/releases/download/1.0.0-rc9/crowdstrike-falcon-downloader-1.0.0-rc9-linux-amd64.zip", using: CurlDownloadStrategy,
+      url "https://github.com/northwood-labs/crowdstrike-falcon-downloader/releases/download/1.0.0/crowdstrike-falcon-downloader-1.0.0-linux-amd64.zip", using: CurlDownloadStrategy,
         headers: [
             "Accept: application/octet-stream",
             "Authorization: Bearer #{ENV["HOMEBREW_GITHUB_API_TOKEN"]}"
         ]
-      sha256 "42500fae5c56e142fa8eb8920b240fd14357576699d45f41a382e88eafedb891"
+      sha256 "b78b6f8df034fd84a58c78bc2779b78bb356e6727ad3f4e264255c9485874a8c"
 
       def install
         bin.install "crowdstrike-falcon-downloader"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/northwood-labs/crowdstrike-falcon-downloader/releases/download/1.0.0-rc9/crowdstrike-falcon-downloader-1.0.0-rc9-linux-arm64.zip", using: CurlDownloadStrategy,
+      url "https://github.com/northwood-labs/crowdstrike-falcon-downloader/releases/download/1.0.0/crowdstrike-falcon-downloader-1.0.0-linux-arm64.zip", using: CurlDownloadStrategy,
         headers: [
             "Accept: application/octet-stream",
             "Authorization: Bearer #{ENV["HOMEBREW_GITHUB_API_TOKEN"]}"
         ]
-      sha256 "2f69157e81cf2ca02c1af9f4c1c9d87005123c0a7dc795138f2353a4ed5f6a77"
+      sha256 "92f35b948d87a5fa0a60e3aadcaf727a65695dd531f00061dc4355b4eee20ee4"
 
       def install
         bin.install "crowdstrike-falcon-downloader"
