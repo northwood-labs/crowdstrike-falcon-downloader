@@ -14,7 +14,7 @@ class CrowdstrikeFalconDownloader < Formula
           "Accept: application/octet-stream",
           "Authorization: Bearer #{ENV["HOMEBREW_GITHUB_API_TOKEN"]}"
       ]
-    sha256 "7baca4b48c836340713d5fa78955e247e9c5caa36a5fb06269e57f6eee15d16b"
+    sha256 "ceed1ffd6674da7276f5c9e5fa21eea8bf77b90ac21a11524aa71e53398bc099"
 
     def install
       bin.install "crowdstrike-falcon-downloader"
@@ -28,7 +28,7 @@ class CrowdstrikeFalconDownloader < Formula
             "Accept: application/octet-stream",
             "Authorization: Bearer #{ENV["HOMEBREW_GITHUB_API_TOKEN"]}"
         ]
-      sha256 "b78b6f8df034fd84a58c78bc2779b78bb356e6727ad3f4e264255c9485874a8c"
+      sha256 "2133d6935446a559eefc8a546df5a90e4ad47c9c8971264d6b4ef685d9e39a92"
 
       def install
         bin.install "crowdstrike-falcon-downloader"
@@ -40,7 +40,7 @@ class CrowdstrikeFalconDownloader < Formula
             "Accept: application/octet-stream",
             "Authorization: Bearer #{ENV["HOMEBREW_GITHUB_API_TOKEN"]}"
         ]
-      sha256 "92f35b948d87a5fa0a60e3aadcaf727a65695dd531f00061dc4355b4eee20ee4"
+      sha256 "8999c8bfe7f5ec5c1216eeadf68795846f0a16716190d47a5ac493b383697e45"
 
       def install
         bin.install "crowdstrike-falcon-downloader"
