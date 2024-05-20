@@ -25,6 +25,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`039fbe3`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/039fbe33ac814e9517096e39bf2a8880925352e1): **deps**: Bump `github/codeql-action` from 3.25.3 to 3.25.5 ([#17](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/17)) ([@dependabot](https://github.com/dependabot))
 * [`1055965`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/105596507ac566edef609835a3a1246b24d83b09): **deps**: Bump `github.com/charmbracelet/bubbletea` ([#16](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/16)) ([@dependabot](https://github.com/dependabot))
 * [`c7625f8`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c7625f808a2784c9f340fd8cfd4ea8cc4c3fec17): **deps**: Bump `golangci/golangci-lint-action` from 5.1.0 to 6.0.1 ([#14](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/14)) ([@dependabot](https://github.com/dependabot))
+* [`10799c8`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/10799c805925874f29d315a9a154c45c6bf493fc): **deps**: Bump `actions/setup-go` from 5.0.0 to 5.0.1 ([#9](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/9)) ([@dependabot](https://github.com/dependabot))
 
 ### <!-- 0 -->:rocket: Features
 
