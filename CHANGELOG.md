@@ -3,7 +3,8 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com), adheres to [Semantic Versioning](https://semver.org), and uses [Conventional Commit](https://www.conventionalcommits.org) syntax.
-  
+
+
 ## Unreleased
 
 ### :books: Documentation
@@ -29,6 +30,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`f365181`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f3651815d0710cce001aea77139aaedca87cf226): **deps**: Bump `goreleaser/goreleaser-action` from 5.0.0 to 6.0.0 ([#33](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/33)) ([@dependabot](https://github.com/dependabot))
 * [`6f31aac`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6f31aac91a9bffd68ee36762518ab32d75402852): **deps**: Bump `github.com/spf13/cobra` from 1.8.0 to 1.8.1 ([#39](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/39)) ([@dependabot](https://github.com/dependabot))
 * [`c34eeb1`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c34eeb1a35aa49a80c6310b3da7e5831b80c07b6): **deps**: Bump `actions/checkout` from 4.1.6 to 4.1.7 ([#40](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/40)) ([@dependabot](https://github.com/dependabot))
+* [`0bcaf8a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/0bcaf8ad4eb31c76ab0a07f8a58ef6dfb82ad0ca): **deps**: Bump `github.com/charmbracelet/bubbletea` ([#42](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/42)) ([@dependabot](https://github.com/dependabot))
+* [`3b4e831`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3b4e8312e6de1b9be1dc09f4d51df370014f26b2): **deps**: Bump `step-security/harden-runner` from 2.7.1 to 2.9.0 ([#48](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/48)) ([@dependabot](https://github.com/dependabot))
+* [`1da03d4`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1da03d4f110a8ea50a830b68816f1d760270e977): **deps**: Bump `github/codeql-action` from 3.25.5 to 3.25.15 ([#51](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/51)) ([@dependabot](https://github.com/dependabot))
+* [`91b4a9c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/91b4a9c0bc8eaca2fd67969304b0cbdd29c66b6d): **deps**: Bump `orhun/git-cliff-action` from 3.0.2 to 3.3.0 ([#52](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/52)) ([@dependabot](https://github.com/dependabot))
 
 ### <!-- 0 -->:rocket: Features
 
