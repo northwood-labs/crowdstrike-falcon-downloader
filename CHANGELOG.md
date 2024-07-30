@@ -26,6 +26,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`1055965`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/105596507ac566edef609835a3a1246b24d83b09): **deps**: Bump `github.com/charmbracelet/bubbletea` ([#16](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/16)) ([@dependabot](https://github.com/dependabot))
 * [`c7625f8`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c7625f808a2784c9f340fd8cfd4ea8cc4c3fec17): **deps**: Bump `golangci/golangci-lint-action` from 5.1.0 to 6.0.1 ([#14](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/14)) ([@dependabot](https://github.com/dependabot))
 * [`10799c8`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/10799c805925874f29d315a9a154c45c6bf493fc): **deps**: Bump `actions/setup-go` from 5.0.0 to 5.0.1 ([#9](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/9)) ([@dependabot](https://github.com/dependabot))
+* [`f365181`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f3651815d0710cce001aea77139aaedca87cf226): **deps**: Bump `goreleaser/goreleaser-action` from 5.0.0 to 6.0.0 ([#33](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/33)) ([@dependabot](https://github.com/dependabot))
+* [`6f31aac`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6f31aac91a9bffd68ee36762518ab32d75402852): **deps**: Bump `github.com/spf13/cobra` from 1.8.0 to 1.8.1 ([#39](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/39)) ([@dependabot](https://github.com/dependabot))
+* [`c34eeb1`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c34eeb1a35aa49a80c6310b3da7e5831b80c07b6): **deps**: Bump `actions/checkout` from 4.1.6 to 4.1.7 ([#40](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/40)) ([@dependabot](https://github.com/dependabot))
 
 ### <!-- 0 -->:rocket: Features
 
@@ -43,5 +46,5 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 
 * [`15ce03b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/15ce03bdbebfe0f3d94841cc3854a2b3f116eb68): Testing GoReleaser configuration. ([@skyzyx](https://github.com/skyzyx))
 
-<p>Generated on 2024-06-18.</p>
+<p>Generated on 2024-07-30.</p>
 
