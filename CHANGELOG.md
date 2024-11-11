@@ -35,6 +35,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`1da03d4`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1da03d4f110a8ea50a830b68816f1d760270e977): **deps**: Bump `github/codeql-action` from 3.25.5 to 3.25.15 ([#51](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/51)) ([@dependabot](https://github.com/dependabot))
 * [`91b4a9c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/91b4a9c0bc8eaca2fd67969304b0cbdd29c66b6d): **deps**: Bump `orhun/git-cliff-action` from 3.0.2 to 3.3.0 ([#52](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/52)) ([@dependabot](https://github.com/dependabot))
 
+### :test_tube: Testing
+
+* [`f5ad8f0`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f5ad8f03545e959bf20fa6a9f113b81bab1319b3): Add some automated workflows. ([@skyzyx](https://github.com/skyzyx))
+
 ### <!-- 0 -->:rocket: Features
 
 * [`dc1e457`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/dc1e457629325410c6e1fb6893e72ba5e25a549e): Initial commit. Most functionality working. ([@skyzyx](https://github.com/skyzyx))
@@ -51,5 +55,5 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 
 * [`15ce03b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/15ce03bdbebfe0f3d94841cc3854a2b3f116eb68): Testing GoReleaser configuration. ([@skyzyx](https://github.com/skyzyx))
 
-<p>Generated on 2024-07-30.</p>
+<p>Generated on 2024-11-11.</p>
 
