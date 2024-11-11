@@ -37,6 +37,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`2c4ca6b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/2c4ca6b23590e425242a323c5a47722289562c92): **deps**: Bump `github.com/schollz/progressbar/v3` ([#103](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/103)) ([@dependabot](https://github.com/dependabot))
 * [`908ac44`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/908ac4422f3df09f6e69ebdae7b69f03c610aa3d): **deps**: Bump `github.com/charmbracelet/bubbles` from 0.18.0 to 0.20.0 ([#77](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/77)) ([@dependabot](https://github.com/dependabot))
 * [`c267786`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c267786eded555ff0addfa2f7dc863306c97eae5): **deps**: Bump `github.com/charmbracelet/lipgloss` from 0.10.0 to 1.0.0 ([#104](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/104)) ([@dependabot](https://github.com/dependabot))
+* [`34a6e59`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/34a6e592099bc9c353aec8bc664d070c7b3bd73a): **deps**: Bump `github.com/charmbracelet/bubbletea` from 0.26.6 to 1.2.1 ([#105](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/105)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
