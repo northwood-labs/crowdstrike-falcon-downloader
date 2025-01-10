@@ -13,7 +13,7 @@ require (
 	github.com/dustin/go-humanize v1.0.1
 	github.com/lithammer/dedent v1.1.0
 	github.com/northwood-labs/golang-utils/archstring v0.0.0-20240405162342-5cc2ac09b2e9
-	github.com/schollz/progressbar/v3 v3.17.1
+	github.com/schollz/progressbar/v3 v3.18.0
 	github.com/spf13/cobra v1.8.1
 )
 
@@ -36,7 +36,7 @@ require (
 	github.com/spf13/pflag v1.0.5 // indirect
 	golang.org/x/exp v0.0.0-20240416160154-fe59bbe5cc7f // indirect
 	golang.org/x/sync v0.9.0 // indirect
-	golang.org/x/sys v0.27.0 // indirect
-	golang.org/x/term v0.26.0 // indirect
+	golang.org/x/sys v0.29.0 // indirect
+	golang.org/x/term v0.28.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
 )
