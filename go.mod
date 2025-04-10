@@ -1,11 +1,10 @@
 module github.com/northwood-labs/crowdstrike-falcon-downloader
 
 go 1.22
-
-toolchain go1.22.2
+toolchain go1.24.1
 
 require (
-	github.com/charmbracelet/bubbles v0.20.0
+	github.com/charmbracelet/bubbles v0.21.0
 	github.com/charmbracelet/bubbletea v1.3.4
 	github.com/charmbracelet/huh/spinner v0.0.0-20240429193246-147e30b8a09c
 	github.com/charmbracelet/lipgloss v1.1.0
