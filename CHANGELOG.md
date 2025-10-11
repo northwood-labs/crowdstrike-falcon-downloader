@@ -191,6 +191,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`fb07a86`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/fb07a86adf1f9a9dd76449dc1077f580f163ba62): **deps**: Bump `ossf/scorecard-action` from 2.4.2 to 2.4.3 ([#275](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/275)) ([@dependabot](https://github.com/dependabot))
 * [`7e91b2b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/7e91b2bc8cff2b08d0dda97e325ce5a064d31ddf): **deps**: Bump `github/codeql-action` from 3.30.5 to 3.30.6 ([#276](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/276)) ([@dependabot](https://github.com/dependabot))
 * [`e23d25a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e23d25ae845dc95edeeca89a704a24330981ea5c): **deps**: Bump `step-security/harden-runner` from 2.13.0 to 2.13.1 ([#266](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/266)) ([@dependabot](https://github.com/dependabot))
+* [`af14ac8`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/af14ac876949b496298b2f119c74f7191ccc78b9): **deps**: Bump `github/codeql-action` from 3.30.6 to 4.30.7 ([#277](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/277)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
