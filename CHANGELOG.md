@@ -200,6 +200,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`0122831`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/01228316623b39283abcec0bac490209eed22753): **deps**: Bump `trufflesecurity/trufflehog` from 3.90.11 to 3.90.12 ([#285](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/285)) ([@dependabot](https://github.com/dependabot))
 * [`f060c19`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f060c19e4583c83742e4f4acafb6d633e7c8afea): **deps**: Bump `github/codeql-action` from 4.31.0 to 4.31.2 ([#286](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/286)) ([@dependabot](https://github.com/dependabot))
 * [`897646f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/897646f5066c6ea5e7b59f12ee7ca84e9395b95d): **deps**: Bump `actions/setup-node` from 4.4.0 to 6.0.0 ([#280](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/280)) ([@dependabot](https://github.com/dependabot))
+* [`aa30af0`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/aa30af059a833b3244022e378495c12a6cc3d049): **deps**: Bump `actions/upload-artifact` from 4.6.2 to 5.0.0 ([#283](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/283)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
