@@ -14,7 +14,7 @@ require (
 	github.com/lithammer/dedent v1.1.0
 	github.com/northwood-labs/golang-utils/archstring v0.0.0-20240405162342-5cc2ac09b2e9
 	github.com/schollz/progressbar/v3 v3.19.0
-	github.com/spf13/cobra v1.10.1
+	github.com/spf13/cobra v1.10.2
 )
 
 require (
