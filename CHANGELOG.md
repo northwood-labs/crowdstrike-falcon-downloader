@@ -220,6 +220,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`f3ca99b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f3ca99bd5b4d9c793885ddfd3403386da0b8784d): **deps**: Bump `github.com/charmbracelet/bubbles` from 0.21.0 to 0.21.1 ([#314](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/314)) ([@dependabot](https://github.com/dependabot))
 * [`0aaee94`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/0aaee94c259b3ce0ddf5f917d976a72708fce760): **deps**: Bump `github.com/charmbracelet/log` from 0.4.2 to 1.0.0 ([#316](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/316)) ([@dependabot](https://github.com/dependabot))
 * [`003701e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/003701e6ce0b106ee2f5f1075542dda2eee7969e): **deps**: Bump `actions/upload-artifact` from 5.0.0 to 6.0.0 ([#312](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/312)) ([@dependabot](https://github.com/dependabot))
+* [`658f4f6`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/658f4f6f9898c01fd941eef7631687f159a65eb7): **deps**: Bump `step-security/harden-runner` from 2.13.3 to 2.14.0 ([#309](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/309)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
