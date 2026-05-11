@@ -225,6 +225,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`25451cf`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/25451cff2a47d0dccad4e3a3eae1fa8fdf31ba86): **deps**: Bump `actions/checkout` from 4.2.2 to 6.0.1 ([#303](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/303)) ([@dependabot](https://github.com/dependabot))
 * [`312db0e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/312db0efb997c9036d67b9f2a501d7ad93fd66e3): **deps**: Bump `actions/setup-go` from 5.5.0 to 6.1.0 ([#295](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/295)) ([@dependabot](https://github.com/dependabot))
 * [`0c15cc4`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/0c15cc4c18c3f9073590ae346acfa576378e1ea4): **deps**: Bump `github.com/charmbracelet/bubbles` from 0.21.1 to 1.0.0 ([#315](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/315)) ([@dependabot](https://github.com/dependabot))
+* [`88b2dcb`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/88b2dcb7191f5a2e1e14af2077d2d15f6abfebb6): **deps**: Bump `actions/setup-go` from 6.1.0 to 6.4.0 ([#318](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/318)) ([@dependabot](https://github.com/dependabot))
+* [`68b37f8`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/68b37f8d8747a4d20666b7bccd55d0750289f8bd): **deps**: Bump `actions/dependency-review-action` from 4.8.2 to 4.9.0 ([#319](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/319)) ([@dependabot](https://github.com/dependabot))
+* [`c9c11a4`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c9c11a436956ce5519ec74864a4c787aa7439e76): **deps**: Bump `orhun/git-cliff-action` from 4.6.0 to 4.8.0 ([#321](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/321)) ([@dependabot](https://github.com/dependabot))
+* [`f0e9c83`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f0e9c8379d2a9e426a96914b8739737537174847): **deps**: Bump `trufflesecurity/trufflehog` from 3.92.3 to 3.95.2 ([#324](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/324)) ([@dependabot](https://github.com/dependabot))
+* [`8ec74db`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8ec74dbe79963a727668f13ef3d670b79ad0907c): **deps**: Bump `dependabot/fetch-metadata` from 2.4.0 to 3.1.0 ([#325](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/325)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
@@ -247,5 +252,5 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 
 * [`15ce03b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/15ce03bdbebfe0f3d94841cc3854a2b3f116eb68): Testing GoReleaser configuration. ([@skyzyx](https://github.com/skyzyx))
 
-<p>Generated on 2026-04-26.</p>
+<p>Generated on 2026-05-11.</p>
 
