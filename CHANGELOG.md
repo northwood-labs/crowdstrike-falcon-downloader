@@ -235,6 +235,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`b67b91f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b67b91f8ca1933d7274ac968730acef79c503695): **deps**: Bump `goreleaser/goreleaser-action` from 6.4.0 to 7.2.1 ([#329](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/329)) ([@dependabot](https://github.com/dependabot))
 * [`fc91c20`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/fc91c2088ebaa50feac1f2f758c6715dd2abb8e4): **deps**: Bump `step-security/harden-runner` from 2.14.0 to 2.19.1 ([#327](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/327)) ([@dependabot](https://github.com/dependabot))
 * [`6855bef`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6855bef1ea59eae8a39aad63a8db5ccd5c9b4a9b): **deps**: Bump `actions/upload-artifact` from 6.0.0 to 7.0.1 ([#323](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/323)) ([@dependabot](https://github.com/dependabot))
+* [`e95b21f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e95b21fde2ee0d21b463363b40e5c4c0f2360fae): **deps**: Bump `actions/checkout` from 6.0.1 to 6.0.2 ([#320](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/320)) ([@dependabot](https://github.com/dependabot))
+* [`aab5439`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/aab5439d86592b8c5e35da5017ca1aa61d767842): **deps**: Bump `crazy-max/ghaction-import-gpg` from 6.3.0 to 7.0.0 ([#317](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/317)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
