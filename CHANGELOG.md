@@ -242,6 +242,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`db420ca`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/db420ca01c74d126431a2f40ef9cfd77890e2a70): **deps**: Bump `github/codeql-action` from 4.35.4 to 4.35.5 ([#332](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/332)) ([@dependabot](https://github.com/dependabot))
 * [`c44db2d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c44db2d657fa8b7b6aad1774b8f80b15c097b409): **deps**: Bump `step-security/harden-runner` from 2.19.1 to 2.19.3 ([#334](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/334)) ([@dependabot](https://github.com/dependabot))
 * [`fb20758`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/fb207587c3c148b95fbb6402593db576171ad5c5): **deps**: Bump `actions/dependency-review-action` from 4.9.0 to 5.0.0 ([#333](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/333)) ([@dependabot](https://github.com/dependabot))
+* [`bc649cc`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/bc649ccfba26c25d09653f20a245beb6077f2d98): **deps**: Bump `golangci/golangci-lint-action` from 9.2.0 to 9.2.1 ([#335](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/335)) ([@dependabot](https://github.com/dependabot))
+* [`1b0bbb9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1b0bbb9e48bfb32823439b333f94bd1d4ad3fe6c): **deps**: Bump `step-security/harden-runner` from 2.19.3 to 2.19.4 ([#336](https://github.com/northwood-labs/crowdstrike-falcon-downloader/issues/336)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
@@ -264,5 +266,5 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 
 * [`15ce03b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/15ce03bdbebfe0f3d94841cc3854a2b3f116eb68): Testing GoReleaser configuration. ([@skyzyx](https://github.com/skyzyx))
 
-<p>Generated on 2026-05-21.</p>
+<p>Generated on 2026-05-22.</p>
 
